@@ -3,8 +3,9 @@ package com.example.envirosearch;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.text.method.LinkMovementMethod;
 
 import java.util.*;
 
@@ -21,6 +22,15 @@ public class displayResult extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_result);
+
+        Bundle extras = getIntent().getExtras();
+        ArrayList<searchResult> SR = null;
+        if (extras != null) {
+            SR = (ArrayList<searchResult>) getIntent().getSerializableExtra("key");
+        }
+        TextView txtView = (TextView)findViewById(R.id.textView);
+        txtView.setText(SR.get(0).title);
+
 
         TextView hyper1= (TextView) findViewById(R.id.textView2);
         hyper1.setMovementMethod(LinkMovementMethod.getInstance());
@@ -46,5 +56,6 @@ public class displayResult extends AppCompatActivity {
 
     public static void main(String args[]){
         //displayResult all_results = new displayResult();
+
     }
 }
