@@ -1,6 +1,8 @@
 package com.example.envirosearch;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
@@ -22,8 +24,13 @@ public class googleUtil {
     final static String GOOGLE_QUERY = "https://www.googleapis.com/customsearch/v1?exactTerms=";
     final static String hq = "environmental%20issues";
     final static String orTerms = "emissions";
+    private Activity activity;
 
-    public static void getSearchResults(String companyName){
+    googleUtil(Activity activity){
+        this.activity = activity;
+    }
+
+    public void getSearchResults(String companyName, Context main){
 
         String urlString = GOOGLE_QUERY + companyName +"&orTerms=" + orTerms + "&cx=" + cx + "&hq=" + hq + "&safe=active&key=" + API_KEY;
         URL url = null;
@@ -36,20 +43,22 @@ public class googleUtil {
 
         GoogleSearchAsyncTask searchTask = new GoogleSearchAsyncTask();
 
-        URLBundle urlBundle = new URLBundle(url, companyName);
+        URLBundle urlBundle = new URLBundle(url, companyName, main);
         searchTask.execute(urlBundle);
 
     }
     private static class URLBundle{
         URL url;
         String companyName;
-        URLBundle(URL url, String companyName){
+        Context main;
+        URLBundle(URL url, String companyName, Context main){
             this.url = url;
             this.companyName = companyName;
+            this.main = main;
         }
     }
 
-    private static class GoogleSearchAsyncTask extends AsyncTask<URLBundle, Integer, ArrayList<searchResult>> {
+    private class GoogleSearchAsyncTask extends AsyncTask<URLBundle, Integer, ArrayList<searchResult>> {
 
         protected void onPreExecute(){
             //Progress bar
@@ -106,14 +115,26 @@ public class googleUtil {
                 }else{
                     String errorMsg = "Http ERROR response " + responseMessage + "\n";
                     Log.d("Util:", errorMsg);
-                    return  null;
+                    return null;
                 }
             } catch (IOException | JSONException e) {
-
+                Log.d("Util:", "Failed to read!");
             }
 
             return null;
         }
+
+       @Override
+       protected void onPostExecute(ArrayList<searchResult> searchResults) {
+           Intent myIntent = new Intent(activity, displayResult.class);
+           myIntent.putExtra("key", searchResults);
+           activity.startActivity(myIntent);
+        }
+
+        protected void onPostExecute(){
+            //Progress bar
+        }
+
         private searchResult extractData(JSONObject googleJSONObject, String companyName) throws JSONException {
 
             searchResult sr = new searchResult();

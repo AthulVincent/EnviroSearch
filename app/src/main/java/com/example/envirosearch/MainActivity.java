@@ -2,6 +2,7 @@ package com.example.envirosearch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Intent myIntent = new Intent(this, displayResult.class);
         // Capturing user input
        /* companyNameInput = (EditText)findViewById(R.id.companyNameInput);
         searchButton = (Button)findViewById(R.id.searchButton);
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Log.d("googleUtil", companyName);
         // Send company name to googleUtil.java for search result processing
-        googleUtil.getSearchResults(companyName);
+        googleUtil obj = new googleUtil(this);
+        obj.getSearchResults(companyName, this);
     }
 }
