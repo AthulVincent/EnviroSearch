@@ -43,6 +43,6 @@ public class MainActivity extends AppCompatActivity {
         //Log.d("googleUtil", companyName);
         // Send company name to googleUtil.java for search result processing
         googleUtil obj = new googleUtil(this);
-        obj.getSearchResults(companyName, this);
+        obj.getSearchResults(companyName);
     }
 }

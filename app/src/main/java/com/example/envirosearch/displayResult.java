@@ -20,6 +20,6 @@ public class displayResult extends AppCompatActivity {
            value = (ArrayList<searchResult>)getIntent().getSerializableExtra("key");
         }
         TextView txtView = (TextView)findViewById(R.id.textView);
-        txtView.setText(value.get(1).title);
+        txtView.setText(value.get(0).title);
     }
 }

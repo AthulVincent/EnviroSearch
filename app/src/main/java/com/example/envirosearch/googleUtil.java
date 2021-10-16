@@ -30,7 +30,7 @@ public class googleUtil {
         this.activity = activity;
     }
 
-    public void getSearchResults(String companyName, Context main){
+    public void getSearchResults(String companyName){
 
         String urlString = GOOGLE_QUERY + companyName +"&orTerms=" + orTerms + "&cx=" + cx + "&hq=" + hq + "&safe=active&key=" + API_KEY;
         URL url = null;
@@ -43,18 +43,16 @@ public class googleUtil {
 
         GoogleSearchAsyncTask searchTask = new GoogleSearchAsyncTask();
 
-        URLBundle urlBundle = new URLBundle(url, companyName, main);
+        URLBundle urlBundle = new URLBundle(url, companyName);
         searchTask.execute(urlBundle);
 
     }
     private static class URLBundle{
         URL url;
         String companyName;
-        Context main;
-        URLBundle(URL url, String companyName, Context main){
+        URLBundle(URL url, String companyName){
             this.url = url;
             this.companyName = companyName;
-            this.main = main;
         }
     }
 
