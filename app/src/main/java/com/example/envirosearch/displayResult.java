@@ -15,11 +15,11 @@ public class displayResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_result);
         Bundle extras = getIntent().getExtras();
-        ArrayList<searchResult> value = null;
+        ArrayList<searchResult> SR = null;
         if (extras != null) {
-           value = (ArrayList<searchResult>)getIntent().getSerializableExtra("key");
+            SR = (ArrayList<searchResult>) getIntent().getSerializableExtra("key");
         }
         TextView txtView = (TextView)findViewById(R.id.textView);
-        txtView.setText(value.get(0).title);
+        txtView.setText(SR.get(0).title);
     }
 }

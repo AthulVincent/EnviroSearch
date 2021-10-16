@@ -38,7 +38,7 @@ public class googleUtil {
         try {
             url = new URL(urlString);
         } catch (MalformedURLException e) {
-           //Display Error
+            Log.d("googleUtil:", "Invalid URL");
         }
 
         GoogleSearchAsyncTask searchTask = new GoogleSearchAsyncTask();
@@ -97,14 +97,13 @@ public class googleUtil {
                     connect.disconnect();
 
                     JSONObject obj = new JSONObject(sb.toString());
-                    sb = new StringBuilder();
+
                     JSONArray arr = obj.getJSONArray("items");
                     for (int i = 0; i < arr.length(); i++)
                     {
                         searchResult sr = extractData(arr.getJSONObject(i), urlBundles[0].companyName);
                         if(sr != null) {
                             SR.add(sr);
-                            sb.append(sr.title + "\n" + sr.URL + "\n" + sr.Snippet + "\n\n");
                             Log.d("Util", sr.title + "\n" + sr.URL + "\n" + sr.Snippet + "\n\n");
                         }
                     }
@@ -118,7 +117,6 @@ public class googleUtil {
             } catch (IOException | JSONException e) {
                 Log.d("Util:", "Failed to read!");
             }
-
             return null;
         }
 
@@ -164,8 +162,6 @@ public class googleUtil {
 
             url = url.toLowerCase();
             url = url.replaceAll("[^a-zA-Z]", "");
-
-            Log.d("googleUtil:", "url=" + url + "companyName=" + companyName);
 
             return url.contains(companyName);
         }
