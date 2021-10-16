@@ -17,18 +17,19 @@ import org.json.*;
 
 public class googleUtil {
 
-    final static String API_KEY = "AIzaSyBkyHDstXezeXvAHdyiD1LyIaIp1satgQc";
+    final static String API_KEY = "AIzaSyAah6fZqvuCvgKAxG4oARWD8kOjA6xBkIo";
     final static String cx = "4e507815c936bcf26";
     final static String GOOGLE_QUERY = "https://www.googleapis.com/customsearch/v1?exactTerms=";
-    final static String orTerms = "environmental%20issues%2Cenvironmental%20problems%2Cenvironmental%20scandals%2Cpolluter%2Cnegative%20environmental%20impact%2Cnegative%20impact%20on%20environment";
+    final static String hq = "environmental%20issues";
+    final static String orTerms = "emissions";
 
     public static void getSearchResults(String companyName){
 
-        String urlStr = GOOGLE_QUERY + companyName + "&cx=" + cx + "&orTerms=" + orTerms + "&safe=active&key=" + API_KEY;
+        String urlString = GOOGLE_QUERY + companyName +"&orTerms=" + orTerms + "&cx=" + cx + "&hq=" + hq + "&safe=active&key=" + API_KEY;
         URL url = null;
 
         try {
-            url = new URL(urlStr);
+            url = new URL(urlString);
         } catch (MalformedURLException e) {
            //Display Error
         }
@@ -65,13 +66,13 @@ public class googleUtil {
             try {
                 connect = (HttpURLConnection) url.openConnection();
             } catch (IOException e) {
-                //display error
+                Log.d("googleUtil:", "Error Opening connection");
             }
             try {
                 responseCode = connect.getResponseCode();
                 responseMessage = connect.getResponseMessage();
             } catch (IOException e) {
-               //Display Error
+                Log.d("Util:", "Error getting response");
             }
 
             try {
@@ -90,7 +91,6 @@ public class googleUtil {
 
                     JSONObject obj = new JSONObject(sb.toString());
                     sb = new StringBuilder();
-
                     JSONArray arr = obj.getJSONArray("items");
                     for (int i = 0; i < arr.length(); i++)
                     {
@@ -98,17 +98,18 @@ public class googleUtil {
                         if(sr != null) {
                             SR.add(sr);
                             sb.append(sr.title + "\n" + sr.URL + "\n" + sr.Snippet + "\n\n");
+                            Log.d("Util", sr.title + "\n" + sr.URL + "\n" + sr.Snippet + "\n\n");
                         }
                     }
                     return SR;
 
                 }else{
-
                     String errorMsg = "Http ERROR response " + responseMessage + "\n";
+                    Log.d("Util:", errorMsg);
                     return  null;
                 }
             } catch (IOException | JSONException e) {
-               //Display result
+
             }
 
             return null;
