@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">EnviroSearch</string>
+
+    <string name="hyperlink1">
+        <a href="website-link1.com">Title1</a>
+    </string>
+    <string name="hyperlink2">
+        <a href="website-link2.com">Title2</a>
+    </string>
+    <string name="hyperlink3">
+        <a href="website-link3.com">Title3</a>
+    </string>
+    <string name="hyperlink4">
+        <a href="website-link4.com">Title4</a>
+    </string>
+    <string name="hyperlink5">
+        <a href="website-link5.com">Title5</a>
+    </string>
+
+    <string name="url1">website-link1.com</string>
+    <string name="url2">website-link2.com</string>
+    <string name="url3">website-link3.com</string>
+    <string name="url4">website-link4.com</string>
+    <string name="url5">website-link5.com</string>
+
+    <string name="snippet1">snippettext1</string>
+    <string name="snippet2">snippettext2</string>
+    <string name="snippet3">snippettext3</string>
+    <string name="snippet4">snippettext4</string>
+    <string name="snippet5">snippettext5</string>
+
+
+
 </resources>

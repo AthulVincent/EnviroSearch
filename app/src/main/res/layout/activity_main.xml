@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_launcher_background"
     tools:context=".MainActivity">
 
     <!--
@@ -17,39 +18,40 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
         -->
-    
+
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/envirosearch_logo"
-        android:id="@+id/logo"
-        android:contentDescription="@string/app_name"
         android:layout_centerHorizontal="true"
-        />
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/envirosearch_logo" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/companyNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:fontFamily="@font/fauna_one"
             android:gravity="center_horizontal"
-            android:hint="Type A Company Name" />
+            android:hint="Type A Company Name"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/searchButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Search" />
+            android:text="Search"
+            android:onClick="onBtnClick"/>
 
     </LinearLayout>
 
