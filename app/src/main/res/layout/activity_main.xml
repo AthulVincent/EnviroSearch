@@ -53,6 +53,22 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="150dp"
+        android:layout_marginLeft="200dp"
+        android:gravity="center">
+
+        <android.widget.Button
+            android:id="@+id/infoButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:onClick="infoButtonClick"
+            android:background="@drawable/information_icon"
+            />
+    </RelativeLayout>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -63,6 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 
     <TextView
         android:id="@+id/Error"
@@ -79,6 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintVertical_bias="0.932"
         tools:visibility="invisible" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

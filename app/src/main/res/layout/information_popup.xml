@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="#e8e8e8"
+            android:layout_marginBottom="50dp">
+
+            <TextView
+                android:id="@+id/informationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/fauna_one"
+                android:text="Looking to find a corporation's environmental history and judge whether you should buy their product? Type the company's name below and press search! EnviroSearch will crawl the web for relevant articles and display them to you."
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:backgroundTint="#e8e8e8"
+                android:textAlignment="center">
+            </TextView>
+
+            <Button
+                android:id="@+id/letsSearch"
+                android:onClick="infoClick"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#30b300"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:text="Let's Do It!"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
