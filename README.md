@@ -3,9 +3,10 @@
 # EnviroSearch
 EnviroSearch is an android app that utilizes Google Custom Search JSON API to allow users to assess the environmental impact of companies by crawling through the web to find relevant articles, pages, and documents that exemplifies the company's track-record in operating in an environmentally (un)sustainable manner.
 
-![htv1](https://user-images.githubusercontent.com/90774897/137617800-145cf62c-b749-40eb-92f4-3379348a9f70.PNG)
-![htv2](https://user-images.githubusercontent.com/90774897/137617801-47b52834-ecf0-4bf9-a493-50d7fa583cc4.png)
-![htv3](https://user-images.githubusercontent.com/90774897/137617802-8fe75566-6139-4f45-8a00-b490f3367f8f.png)
+![htv1](https://user-images.githubusercontent.com/90774897/137617933-d3d9655f-173f-485f-9ebc-a6724464b679.PNG)
+![htv2](https://user-images.githubusercontent.com/90774897/137617934-c5381cd1-e5fe-4bc2-82d7-4de238a13ea4.png)
+![htv3](https://user-images.githubusercontent.com/90774897/137617935-f926b06f-fce0-478d-a29e-9e22aa7dc9d0.png)
+
 
 ## Inspiration
 
