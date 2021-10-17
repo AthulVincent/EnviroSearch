@@ -17,17 +17,43 @@
         <a href="website-link5.com">Title5</a>
     </string>
 
+    <string name="hyperlink6">
+        <a href="website-link6.com">Title6</a>
+    </string>
+    <string name="hyperlink7">
+        <a href="website-link7.com">Title7</a>
+    </string>
+    <string name="hyperlink8">
+        <a href="website-link8.com">Title8</a>
+    </string>
+    <string name="hyperlink9">
+        <a href="website-link9.com">Title9</a>
+    </string>
+    <string name="hyperlink10">
+        <a href="website-link10.com">Title10</a>
+    </string>
+
     <string name="url1">website-link1.com</string>
     <string name="url2">website-link2.com</string>
     <string name="url3">website-link3.com</string>
     <string name="url4">website-link4.com</string>
     <string name="url5">website-link5.com</string>
+    <string name="url6">website-link6.com</string>
+    <string name="url7">website-link7.com</string>
+    <string name="url8">website-link8.com</string>
+    <string name="url9">website-link9.com</string>
+    <string name="url10">website-link10.com</string>
 
     <string name="snippet1">snippettext1</string>
     <string name="snippet2">snippettext2</string>
     <string name="snippet3">snippettext3</string>
     <string name="snippet4">snippettext4</string>
     <string name="snippet5">snippettext5</string>
+    <string name="snippet6">snippettext6</string>
+    <string name="snippet7">snippettext7</string>
+    <string name="snippet8">snippettext8</string>
+    <string name="snippet9">snippettext9</string>
+    <string name="snippet10">snippettext10</string>
 
 
 
