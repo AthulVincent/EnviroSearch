@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".displayResult">
 
     <TextView
@@ -45,7 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hyperlink1"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -60,13 +62,20 @@
                 android:layout_height="wrap_content"
                 android:text="@string/snippet1"
                 android:textSize="20sp" />
-
+            <!--
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="_____________________"
+                android:textSize="20sp"/>
+                -->
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hyperlink2"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -87,7 +96,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hyperlink3"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -108,7 +118,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hyperlink4"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -129,7 +140,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/hyperlink5"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
 
             <TextView
                 android:id="@+id/textView15"
@@ -143,6 +155,116 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/snippet5"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hyperlink6"
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/url6"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/snippet6"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hyperlink7"
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/url7"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/snippet7"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hyperlink8"
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/url8"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/snippet8"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hyperlink9"
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/url9"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/snippet9"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hyperlink10"
+                android:textSize="20sp"
+                android:textColorLink="#30b300" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/url10"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/snippet10"
                 android:textSize="20sp" />
 
         </LinearLayout>
