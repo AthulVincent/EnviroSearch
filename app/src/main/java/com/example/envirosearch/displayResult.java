@@ -44,7 +44,7 @@ public class displayResult extends AppCompatActivity {
         }
 
         for(int j = 0; j < SR.size(); j++){
-            textviewarray.get(j*3).setText(SR.get(j).title);
+            //textviewarray.get(j*3).setText(SR.get(j).title);
             textviewarray.get(j*3+1).setText(SR.get(j).URL);
             textviewarray.get(j*3+2).setText(SR.get(j).Snippet);
             textviewarray.get(j*3).setVisibility(View.VISIBLE);
@@ -53,7 +53,9 @@ public class displayResult extends AppCompatActivity {
             //textviewarray.get(j*3 + 1).setMovementMethod(LinkMovementMethod.getInstance());
             //textviewarray.get(j*3).setLinksClickable(true);
             textviewarray.get(j*3).setClickable(true);
-            textviewarray.get(j*3).setText(Html.fromHtml(SR.get(j).URL));
+            //textviewarray.get(j*3).setText(Html.fromHtml(SR.get(j).URL));
+            //textviewarray.get(j*3).setText(Html.fromHtml("<a href=SR.get(j).URL>${SR.get(j).title}</a>"));
+
         }
 
     }

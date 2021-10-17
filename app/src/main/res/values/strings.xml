@@ -2,7 +2,7 @@
     <string name="app_name">EnviroSearch</string>
 
     <string name="hyperlink1">
-        <a href="website-link1.com">Title1</a>
+        <a href="https://www.youtube.com">Title1</a>
     </string>
     <string name="hyperlink2">
         <a href="website-link2.com">Title2</a>
