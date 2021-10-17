@@ -33,17 +33,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent myIntent = new Intent(this, displayResult.class);
-
-        // Information pop-up
-        //open = findViewById(R.id.searchButton);
-
-        /*
-        open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openInfo("testing", "testtt");
-            }
-        }); */
     }
 
     public void infoButtonClick(View view){
@@ -79,16 +68,6 @@ public class MainActivity extends AppCompatActivity {
         close = dialog.findViewById(R.id.letsSearch);
         textView1 = dialog.findViewById(R.id.text);
         image = dialog.findViewById(R.id.image);
-
-        //textView1.setText(text);
-
-        /*
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });*/
 
         dialog.setCancelable(true);
         window.setLayout(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT);
