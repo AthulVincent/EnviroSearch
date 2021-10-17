@@ -156,10 +156,7 @@ public class googleUtil {
 
         private boolean isCompanyWebsite(String url, String companyName) {
 
-            if(url.contains("www."))
-                url = url.split("\\.")[1];
-            else
-                url = url.split("\\.")[0];
+            url = url.split("\\.com")[0];
 
 
             companyName = companyName.replaceAll("[^a-zA-Z]", "");
