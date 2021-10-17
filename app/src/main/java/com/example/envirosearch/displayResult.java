@@ -3,7 +3,10 @@ package com.example.envirosearch;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Html;
+import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewDebug;
@@ -18,7 +21,6 @@ public class displayResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_display_result);
-
 
         int[] textviewids = {(R.id.textView2), (R.id.textView3), (R.id.textView4), (R.id.textView5), (R.id.textView6),
                 (R.id.textView7), (R.id.textView8), (R.id.textView9), (R.id.textView10), (R.id.textView11),
@@ -35,7 +37,6 @@ public class displayResult extends AppCompatActivity {
             textviewarray.add((TextView)findViewById(textviewids[i]));
         }
 
-
         Bundle extras = getIntent().getExtras();
         ArrayList<searchResult> SR = null;
         if (extras != null) {
@@ -50,6 +51,9 @@ public class displayResult extends AppCompatActivity {
             textviewarray.get(j*3 + 1).setVisibility(View.VISIBLE);
             textviewarray.get(j*3 + 2).setVisibility(View.VISIBLE);
             //textviewarray.get(j*3 + 1).setMovementMethod(LinkMovementMethod.getInstance());
+            //textviewarray.get(j*3).setLinksClickable(true);
+            textviewarray.get(j*3).setClickable(true);
+            textviewarray.get(j*3).setText(Html.fromHtml(SR.get(j).URL));
         }
 
     }

@@ -48,7 +48,10 @@
                 android:text="@string/hyperlink1"
                 android:textColorLink="#30b300"
                 android:textSize="20sp"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web"
+                />
 
             <TextView
                 android:id="@+id/textView3"
@@ -56,7 +59,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/url1"
                 android:textSize="20sp"
-                android:visibility="invisible" />
+                android:visibility="invisible"
+                />
 
             <TextView
                 android:id="@+id/textView4"
@@ -79,7 +83,9 @@
                 android:text="@string/hyperlink2"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -104,7 +110,9 @@
                 android:text="@string/hyperlink3"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -129,7 +137,9 @@
                 android:text="@string/hyperlink4"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -154,7 +164,9 @@
                 android:text="@string/hyperlink5"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView15"
@@ -179,7 +191,9 @@
                 android:text="@string/hyperlink6"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView18"
@@ -204,7 +218,9 @@
                 android:text="@string/hyperlink7"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -229,7 +245,9 @@
                 android:text="@string/hyperlink8"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView24"
@@ -254,7 +272,9 @@
                 android:text="@string/hyperlink9"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -279,7 +299,9 @@
                 android:text="@string/hyperlink10"
                 android:textSize="20sp"
                 android:textColorLink="#30b300"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:linksClickable="true"
+                android:autoLink="web" />
 
             <TextView
                 android:id="@+id/textView30"
