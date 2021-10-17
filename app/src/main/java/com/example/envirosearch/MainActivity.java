@@ -2,10 +2,12 @@ package com.example.envirosearch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onBtnClick(View view){
         companyNameInput = (EditText)findViewById(R.id.companyNameInput);
+
         companyName = companyNameInput.getText().toString();
         googleUtil obj = new googleUtil(this);
         obj.getSearchResults(companyName);
