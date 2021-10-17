@@ -47,6 +47,7 @@ public class googleUtil {
         searchTask.execute(urlBundle);
 
     }
+
     private static class URLBundle{
         URL url;
         String companyName;
@@ -59,7 +60,7 @@ public class googleUtil {
     private class GoogleSearchAsyncTask extends AsyncTask<URLBundle, Integer, ArrayList<searchResult>> {
 
         protected void onPreExecute(){
-            //Progress bar
+
         }
         @Override
         protected ArrayList<searchResult> doInBackground(URLBundle... urlBundles) {
@@ -68,7 +69,6 @@ public class googleUtil {
             Integer responseCode = null;
             String responseMessage = "";
             ArrayList<searchResult> SR = new ArrayList<searchResult>();
-
             HttpURLConnection connect = null;
             try {
                 connect = (HttpURLConnection) url.openConnection();
