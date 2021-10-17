@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,9 +26,11 @@ public class googleUtil {
     final static String hq = "environmental%20issues";
     final static String orTerms = "emissions";
     private Activity activity;
+    ProgressBar pg;
 
     googleUtil(Activity activity){
         this.activity = activity;
+        pg = (ProgressBar)activity.findViewById(R.id.progressBar);
     }
 
     public void getSearchResults(String companyName){
@@ -47,6 +50,7 @@ public class googleUtil {
         searchTask.execute(urlBundle);
 
     }
+
     private static class URLBundle{
         URL url;
         String companyName;
@@ -59,7 +63,8 @@ public class googleUtil {
     private class GoogleSearchAsyncTask extends AsyncTask<URLBundle, Integer, ArrayList<searchResult>> {
 
         protected void onPreExecute(){
-            //Progress bar
+
+            pg.setVisibility(View.VISIBLE);
         }
         @Override
         protected ArrayList<searchResult> doInBackground(URLBundle... urlBundles) {
@@ -68,7 +73,6 @@ public class googleUtil {
             Integer responseCode = null;
             String responseMessage = "";
             ArrayList<searchResult> SR = new ArrayList<searchResult>();
-
             HttpURLConnection connect = null;
             try {
                 connect = (HttpURLConnection) url.openConnection();
@@ -124,6 +128,7 @@ public class googleUtil {
        protected void onPostExecute(ArrayList<searchResult> searchResults) {
            Intent myIntent = new Intent(activity, displayResult.class);
            myIntent.putExtra("key", searchResults);
+           pg.setVisibility(View.INVISIBLE);
            activity.startActivity(myIntent);
         }
 

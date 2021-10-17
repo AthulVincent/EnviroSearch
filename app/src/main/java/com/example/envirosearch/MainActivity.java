@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     // Clicking button for user input
     public void onBtnClick(View view){
         companyNameInput = (EditText)findViewById(R.id.companyNameInput);
+
         companyName = companyNameInput.getText().toString();
         googleUtil obj = new googleUtil(this);
         obj.getSearchResults(companyName);
