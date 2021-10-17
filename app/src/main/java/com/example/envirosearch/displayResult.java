@@ -25,12 +25,12 @@ public class displayResult extends AppCompatActivity {
 
         // or do: for(int i =0, int j = 2; i < 5; i++, j=j+3)
 
-        int[] textviewids = {(R.id.textview2), (R.id.textview3), (R.id.textview4), (R.id.textview5), (R.id.textview6),
-                (R.id.textview7), (R.id.textview8), (R.id.textview9), (R.id.textview10), (R.id.textview11),
-                        (R.id.textview12), (R.id.textview13), (R.id.textview14), (R.id.textview15), (R.id.textview16),
-                (R.id.textview17), (R.id.textview18), (R.id.textview19), (R.id.textview20), (R.id.textview21)
-                        (R.id.textview22), (R.id.textview23), (R.id.textview24), (R.id.textview25), (R.id.textview26),
-                (R.id.textview27), (R.id.textview28), (R.id.textview29), (R.id.textview30), (R.id.textview31)};
+        int[] textviewids = {(R.id.textView2), (R.id.textView3), (R.id.textView4), (R.id.textView5), (R.id.textView6),
+                (R.id.textView7), (R.id.textView8), (R.id.textView9), (R.id.textView10), (R.id.textView11),
+                        (R.id.textView12), (R.id.textView13), (R.id.textView14), (R.id.textView15), (R.id.textView16),
+                (R.id.textView17), (R.id.textView18), (R.id.textView19), (R.id.textView20), (R.id.textView21),
+                        (R.id.textView22), (R.id.textView23), (R.id.textView24), (R.id.textView25), (R.id.textView26),
+                (R.id.textView27), (R.id.textView28), (R.id.textView29), (R.id.textView30), (R.id.textView31)};
 
         int i = 0;
 
