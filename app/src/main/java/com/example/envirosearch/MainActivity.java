@@ -14,8 +14,12 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ImageView;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,12 +48,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Clicking button for user input
+
     public void onBtnClick(View view){
         companyNameInput = (EditText)findViewById(R.id.companyNameInput);
 
         companyName = companyNameInput.getText().toString();
-        googleUtil obj = new googleUtil(this);
-        obj.getSearchResults(companyName);
+        Pattern p = Pattern.compile("([a-zA-Z]+([\\-][a-zA-Z]+)*)");
+        Matcher m = p.matcher(companyName);
+        TextView txtView = (TextView) findViewById(R.id.Error);
+        if (!m.matches())
+            txtView.setVisibility(View.VISIBLE);
+        else {
+            txtView.setVisibility(View.INVISIBLE);
+            googleUtil obj = new googleUtil(this);
+            obj.getSearchResults(companyName);
+        }
     }
 
     // Clicking info button

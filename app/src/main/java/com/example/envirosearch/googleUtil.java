@@ -20,7 +20,7 @@ import org.json.*;
 
 public class googleUtil {
 
-    final static String API_KEY = "AIzaSyAah6fZqvuCvgKAxG4oARWD8kOjA6xBkIo";
+    final static String API_KEY = "AIzaSyDygQ6omZFIDXLTjPzLsjFo08JHvYXtgMo";
     final static String cx = "4e507815c936bcf26";
     final static String GOOGLE_QUERY = "https://www.googleapis.com/customsearch/v1?exactTerms=";
     final static String hq = "environmental%20issues";
@@ -108,7 +108,6 @@ public class googleUtil {
                         searchResult sr = extractData(arr.getJSONObject(i), urlBundles[0].companyName);
                         if(sr != null) {
                             SR.add(sr);
-                            Log.d("Util", sr.title + "\n" + sr.URL + "\n" + sr.Snippet + "\n\n");
                         }
                     }
                     return SR;
@@ -132,9 +131,6 @@ public class googleUtil {
            activity.startActivity(myIntent);
         }
 
-        protected void onPostExecute(){
-            //Progress bar
-        }
 
         private searchResult extractData(JSONObject googleJSONObject, String companyName) throws JSONException {
 
@@ -160,7 +156,8 @@ public class googleUtil {
 
         private boolean isCompanyWebsite(String url, String companyName) {
 
-            url = url.split("\\.")[1];
+            url = url.split("\\.com")[0];
+
 
             companyName = companyName.replaceAll("[^a-zA-Z]", "");
             companyName = companyName.toLowerCase();
