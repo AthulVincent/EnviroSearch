@@ -28,8 +28,8 @@ public class displayResult extends AppCompatActivity {
         if (extras != null) {
             SR = (ArrayList<searchResult>) getIntent().getSerializableExtra("key");
         }
-        TextView txtView = (TextView)findViewById(R.id.textView);
-        txtView.setText(SR.get(0).title);
+
+
 
 
         TextView hyper1= (TextView) findViewById(R.id.textView2);
