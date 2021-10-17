@@ -4,8 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/coding/EnvironSearch/app/src/main/res/layout/activity_display_result.xml" value="0.23324275362318841" />
+        <entry key="..\:/Users/Marmik/AndroidStudioProjects/EnvironSearch/app/src/main/res/drawable/input_background.xml" value="0.22708333333333333" />
+        <entry key="..\:/Users/Marmik/AndroidStudioProjects/EnvironSearch/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
 </project>

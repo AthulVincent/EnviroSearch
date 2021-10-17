@@ -1,6 +1,8 @@
 package com.example.envirosearch;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
@@ -22,8 +24,13 @@ public class googleUtil {
     final static String GOOGLE_QUERY = "https://www.googleapis.com/customsearch/v1?exactTerms=";
     final static String hq = "environmental%20issues";
     final static String orTerms = "emissions";
+    private Activity activity;
 
-    public static void getSearchResults(String companyName){
+    googleUtil(Activity activity){
+        this.activity = activity;
+    }
+
+    public void getSearchResults(String companyName){
 
         String urlString = GOOGLE_QUERY + companyName +"&orTerms=" + orTerms + "&cx=" + cx + "&hq=" + hq + "&safe=active&key=" + API_KEY;
         URL url = null;
@@ -31,7 +38,7 @@ public class googleUtil {
         try {
             url = new URL(urlString);
         } catch (MalformedURLException e) {
-           //Display Error
+            Log.d("googleUtil:", "Invalid URL");
         }
 
         GoogleSearchAsyncTask searchTask = new GoogleSearchAsyncTask();
@@ -40,6 +47,7 @@ public class googleUtil {
         searchTask.execute(urlBundle);
 
     }
+
     private static class URLBundle{
         URL url;
         String companyName;
@@ -49,10 +57,10 @@ public class googleUtil {
         }
     }
 
-    private static class GoogleSearchAsyncTask extends AsyncTask<URLBundle, Integer, ArrayList<searchResult>> {
+    private class GoogleSearchAsyncTask extends AsyncTask<URLBundle, Integer, ArrayList<searchResult>> {
 
         protected void onPreExecute(){
-            //Progress bar
+
         }
         @Override
         protected ArrayList<searchResult> doInBackground(URLBundle... urlBundles) {
@@ -61,7 +69,6 @@ public class googleUtil {
             Integer responseCode = null;
             String responseMessage = "";
             ArrayList<searchResult> SR = new ArrayList<searchResult>();
-
             HttpURLConnection connect = null;
             try {
                 connect = (HttpURLConnection) url.openConnection();
@@ -90,14 +97,13 @@ public class googleUtil {
                     connect.disconnect();
 
                     JSONObject obj = new JSONObject(sb.toString());
-                    sb = new StringBuilder();
+
                     JSONArray arr = obj.getJSONArray("items");
                     for (int i = 0; i < arr.length(); i++)
                     {
                         searchResult sr = extractData(arr.getJSONObject(i), urlBundles[0].companyName);
                         if(sr != null) {
                             SR.add(sr);
-                            sb.append(sr.title + "\n" + sr.URL + "\n" + sr.Snippet + "\n\n");
                             Log.d("Util", sr.title + "\n" + sr.URL + "\n" + sr.Snippet + "\n\n");
                         }
                     }
@@ -106,14 +112,25 @@ public class googleUtil {
                 }else{
                     String errorMsg = "Http ERROR response " + responseMessage + "\n";
                     Log.d("Util:", errorMsg);
-                    return  null;
+                    return null;
                 }
             } catch (IOException | JSONException e) {
-
+                Log.d("Util:", "Failed to read!");
             }
-
             return null;
         }
+
+       @Override
+       protected void onPostExecute(ArrayList<searchResult> searchResults) {
+           Intent myIntent = new Intent(activity, displayResult.class);
+           myIntent.putExtra("key", searchResults);
+           activity.startActivity(myIntent);
+        }
+
+        protected void onPostExecute(){
+            //Progress bar
+        }
+
         private searchResult extractData(JSONObject googleJSONObject, String companyName) throws JSONException {
 
             searchResult sr = new searchResult();
@@ -145,8 +162,6 @@ public class googleUtil {
 
             url = url.toLowerCase();
             url = url.replaceAll("[^a-zA-Z]", "");
-
-            Log.d("googleUtil:", "url=" + url + "companyName=" + companyName);
 
             return url.contains(companyName);
         }
