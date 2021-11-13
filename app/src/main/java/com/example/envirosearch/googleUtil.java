@@ -20,7 +20,7 @@ import org.json.*;
 
 public class googleUtil {
 
-    final static String API_KEY = "AIzaSyDygQ6omZFIDXLTjPzLsjFo08JHvYXtgMo";
+    final static String API_KEY = "";
     final static String cx = "4e507815c936bcf26";
     final static String GOOGLE_QUERY = "https://www.googleapis.com/customsearch/v1?exactTerms=";
     final static String hq = "environmental%20issues";
